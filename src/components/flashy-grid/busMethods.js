@@ -1,3 +1,3 @@
-export const busMethods = {
+export const dataBus = {
   methods: {}
 };

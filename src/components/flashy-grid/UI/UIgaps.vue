@@ -44,6 +44,7 @@ export default {
       yGap: 0
     };
   },
+  props: ["value"],
   methods: {
     changeGap() {
       eventBus.$emit("gapsWereChanged", {

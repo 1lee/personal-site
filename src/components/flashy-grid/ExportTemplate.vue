@@ -15,57 +15,51 @@
     <br>new Vue({
     <br>el: '#thegrid',
     <br>
-    data: { gridSize: {{ gridSize }},
+    data: { gridSize: {{ gridData.gridSize }},
     <br>
-    height: {{ height }},
+    height: {{ gridData.height }},
     <br>
-    width: {{ width }},
+    width: {{ gridData.width }},
     <br>
     blocks: {{ blocks }},
     <br>
-    isOn: {{ isOn }},
+    isOn: {{ gridData.isOn }},
     <br>
-    inputColor: {{ inputColor | orReturnEmptyString }},
+    availableColors: {{ gridData.availableColors}},
     <br>
-    inputBorderColor: {{ inputBorderColor | orReturnEmptyString}},
-    <br>
-    availableColors: {{ availableColors}},
-    <br>
-    availableBorderColors: {{ availableBorderColors}},
+    availableBorderColors: {{ gridData.availableBorderColors}},
     <br>
     updatedSpeed: {{ updatedSpeed }},
     <br>
-    columns: "{{ columns }}",
+    columns: "{{ gridData.columns }}",
     <br>
-    rows: "{{ rows }}",
+    rows: "{{ gridData.rows }}",
     <br>
-    matrix: {{ matrix }},
+    matrix: {{ gridData.matrix }},
     <br>
-    borderSize: {{ borderSize }},
+    borderSize: {{ gridData.borderSize }},
     <br>
-    borderColor: {{ borderColor | orReturnEmptyString}},
-    <br>
-    borderStyle: {{ borderStyle | orReturnEmptyString}},
+    borderStyle: {{ gridData.borderStyle }},
     <br>
     transitionRate: {{ transitionRate }},
     <br>
-    stopAll: {{ stopAll }},
+    stopAll: {{ gridData.stopAll }},
     <br>
-    xGap: {{ xGap }},
+    xGap: {{ gridData.xGap }},
     <br>
-    yGap: {{ yGap }},
+    yGap: {{ gridData.yGap }},
     <br>
-    radius: {{ radius }},
+    radius: {{ gridData.radius }},
     <br>
-    perspectiveValue: {{ perspectiveValue }},
+    perspectiveValue: {{ gridData.perspectiveValue }},
     <br>
-    yRotation: {{ yRotation }},
+    yRotation: {{ gridData.yRotation }},
     <br>
-    xRotation: {{ xRotation }},
+    xRotation: {{ gridData.xRotation }},
     <br>
-    zRotation: {{ zRotation }},
+    zRotation: {{ gridData.zRotation }},
     <br>
-    opacitySetting: {{ opacitySetting }},
+    opacitySetting: {{ gridData.opacitySetting }},
     <br>template:`&#60;ul id="thegrid" class="grid-container">
     &#60;li
     class="item"
@@ -134,7 +128,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["gridData", "blocks", "updatedSpeed", "transitionRate"],
+  filters: {
+    orReturnEmptyString(value) {
+      if (value !== "") {
+        return;
+      }
+      return '""';
+    }
+  }
+};
 </script>
 
 <style>

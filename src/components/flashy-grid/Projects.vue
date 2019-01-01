@@ -3,14 +3,14 @@
     <ul
       id="thegrid"
       class="grid-container"
-      :style="[heightWidth, gridTemplateRow, gridTemplateColumns, gridGap, opacity, {'transform': 'perspective(' + perspectiveValue + 'px) rotateY(' + yRotation + 'deg) rotateX(' + xRotation + 'deg) rotateZ(' + zRotation + 'deg)'}]"
+      :style="[heightWidth, gridTemplateRow, gridTemplateColumns, gridGap, opacity, {'transform': 'perspective(' + gridData.perspectiveValue + 'px) rotateY(' + gridData.yRotation + 'deg) rotateX(' + gridData.xRotation + 'deg) rotateZ(' + gridData.zRotation + 'deg)'}]"
     >
       <li
         class="item"
         v-for="unit in blocks"
         :key="blocks.indexOf(unit)"
         v-if="blocks.length > 1"
-        :style="[{'transition': transitionRate + 's'}, blockBorderRadius, {'transform': 'skew(' + matrix.skewX + 'deg, ' + matrix.skewY + 'deg)'}, border]"
+        :style="[{'transition': transitionRate + 's'}, blockBorderRadius, {'transform': 'skew(' + gridData.matrix.skewX + 'deg, ' + gridData.matrix.skewY + 'deg)'}, border]"
       ></li>
       <!-- END block -->
     </ul>
@@ -25,57 +25,35 @@
 
     <ui-color></ui-color>
 
-    <hr>
+    <ui-border></ui-border>
 
-    <div class="code-export" v-if="codeBoxVisible">
-      <export-template></export-template>
+    <ui-footer></ui-footer>
+
+    <div class="row justify-content-end" v-if="!codeBoxVisible">
+      <div class="col-3">
+        <button class="btn btn-primary btn-light btn-sm" @click="exportCode()">Get Code</button>
+      </div>
+    </div>
+    <div class="row justify-content-end" v-if="codeBoxVisible">
+      <div class="col-3">
+        <button class="btn btn-primary btn-light btn-sm" @click="exportCode()">Close Code Box</button>
+      </div>
     </div>
 
-    <div class="container-fluid footer-panel float-right">
-      <div class="row justify-content-end">
-        <div class="col-4">
-          <h6 class="text-white">Opacity</h6>
-          <input
-            class="opacity"
-            type="range"
-            min="0"
-            max="1"
-            step=".01"
-            value="opacity"
-            v-model="opacitySetting"
-          >
-        </div>
-
-        <div class="col-2">
-          <h6 class="text-white">Perspective</h6>
-          <input
-            type="number"
-            name="perspective"
-            step="1"
-            min="20"
-            max="1100"
-            v-model="perspectiveValue"
-          >
-        </div>
-        <div class="col-2">
-          <h6 class="text-white">X Rotation</h6>
-          <input type="number" name="xRotation" step="1" min="-80" max="80" v-model="xRotation">
-        </div>
-        <div class="col-2">
-          <h6 class="text-white">Y Rotation</h6>
-          <input type="number" name="yRotation" step="1" min="-80" max="80" v-model="yRotation">
-        </div>
-        <div class="col-2">
-          <h6 class="text-white">Z Rotation</h6>
-          <input type="number" name="zRotation" step="1" min="-180" max="180" v-model="zRotation">
-        </div>
-      </div>
+    <div class="code-export" v-if="codeBoxVisible">
+      <export-template
+        :gridData="gridData"
+        :blocks="blocks"
+        :updatedSpeed="updatedSpeed"
+        :transitionRate="transitionRate"
+      ></export-template>
     </div>
   </div>
 </template>
 
 <script>
 import { eventBus } from "../../main.js";
+import { dataBus } from "./busMethods.js";
 
 import UIdimensions from "./UI/UIdimensions";
 import UIrates from "./UI/UIrates";
@@ -83,6 +61,7 @@ import UIgaps from "./UI/UIgaps";
 import UIskew from "./UI/UIskew";
 import UIcolor from "./UI/UIcolor";
 import UIborder from "./UI/UIborder";
+import UIfooter from "./UI/UIfooter";
 
 import ExportTemplate from "./ExportTemplate";
 
@@ -94,53 +73,57 @@ export default {
     "ui-gaps": UIgaps,
     "ui-skew": UIskew,
     "ui-color": UIcolor,
-    "ui-border": UIborder
+    "ui-border": UIborder,
+    "ui-footer": UIfooter
   },
   data() {
     return {
-      gridSize: 1,
-      height: 100,
-      width: 100,
-      blocks: ["block"],
-      isOn: false,
-      inputBorderColor: "",
-      availableColors: ["red", "purple", "black", "white", "magenta", "orange"],
-      availableBorderColors: ["white"],
-      updatedSpeed: 1000,
-      columns: "repeat(10, 1fr)",
-      rows: "repeat(10, 1fr)",
-      matrix: {
-        scaleX: 0,
-        skewX: 0,
-        skewY: 0,
-        scaleY: 0,
-        translateX: 0,
-        translateY: 0
+      gridData: {
+        gridSize: 1,
+        height: 100,
+        width: 100,
+        columns: "repeat(10, 1fr)",
+        rows: "repeat(10, 1fr)",
+        isOn: false,
+        availableColors: [
+          "red",
+          "purple",
+          "black",
+          "white",
+          "magenta",
+          "orange"
+        ],
+        inputBorderColor: "",
+        availableBorderColors: ["white"],
+        borderSize: 0,
+        borderColor: "",
+        borderStyle: "",
+        stopAll: false,
+        xGap: 0,
+        yGap: 0,
+        radius: 0,
+        opacitySetting: 1,
+        perspectiveValue: 0,
+        xRotation: 0,
+        yRotation: 0,
+        zRotation: 0,
+        matrix: {
+          scaleX: 0,
+          skewX: 0,
+          skewY: 0,
+          scaleY: 0,
+          translateX: 0,
+          translateY: 0
+        }
       },
-      borderSize: 0,
-      borderColor: "",
-      borderStyle: "",
+      blocks: ["block"],
+      updatedSpeed: 1000,
       transitionRate: 0.5,
-      stopAll: false,
-      xGap: 0,
-      yGap: 0,
-      radius: 0,
-      perspectiveValue: 0,
-      yRotation: 0,
-      xRotation: 0,
-      zRotation: 0,
-      opacitySetting: 1,
       gridCss: "",
       codeBoxVisible: false
     };
   },
   filters: {
-    orReturnEmptyString(value) {
-      if (value !== "") {
-        return;
-      }
-      return '""';
-    },
     returnAsString(value) {
       return value.toString();
     }
@@ -148,67 +131,71 @@ export default {
   computed: {
     nodeCrawl() {
       this.isOn = true;
-      this.stopAll = false;
+      // this.stopAll = false;
       this.timer(this.updatedSpeed);
     },
     heightWidth() {
       return {
-        height: this.height + "vh",
-        width: this.width + "vw"
+        height: this.gridData.height + "vh",
+        width: this.gridData.width + "vw"
       };
     },
     gridTemplateRow() {
       return {
-        gridTemplateRows: this.rows
+        gridTemplateRows: this.gridData.rows
       };
     },
     gridTemplateColumns() {
       return {
-        gridTemplateColumns: this.columns
+        gridTemplateColumns: this.gridData.columns
       };
     },
     gridGap() {
       return {
-        gridGap: this.xGap + "%" + " " + this.yGap + "%"
+        gridGap: this.gridData.xGap + "%" + " " + this.gridData.yGap + "%"
       };
     },
     blockBorderRadius() {
       return {
-        borderRadius: this.radius + "%"
+        borderRadius: this.gridData.radius + "%"
       };
     },
     blockTransform() {
       return {
-        transform: "skewX(" + this.matrix.skewX + "deg);"
+        transform: "skewX(" + this.gridData.matrix.skewX + "deg);"
       };
     },
     border() {
       return {
         border:
-          this.borderSize +
+          this.gridData.borderSize +
           "px " +
-          this.borderStyle +
+          this.gridData.borderStyle +
           " " +
-          this.inputBorderColor
+          this.gridData.inputBorderColor
       };
     },
     opacity() {
       return {
-        opacity: this.opacitySetting
+        opacity: this.gridData.opacitySetting
       };
     }
   },
   watch: {
-    stopAll: function reset() {
-      this.stopAll = true;
+    "gridData.stopAll": function reset() {
+      this.gridData.stopAll = true;
     },
     updatedSpeed: function newSpeed() {
       this.timer(this.updatedSpeed);
     },
-    gridSize: function newGridSize() {
-      this.gridSizer(this.gridSize);
+    "gridData.gridSize": function newGridSize() {
+      this.gridSizer(this.gridData.gridSize);
       this.blocks = [];
-      for (let i = 0; i < this.gridSize * this.gridSize; i++) {
+      for (
+        let i = 0;
+        i < this.gridData.gridSize * this.gridData.gridSize;
+        i++
+      ) {
         this.blocks.push("block");
       }
     },
@@ -219,7 +206,7 @@ export default {
   methods: {
     turnOff() {
       this.isOn = false;
-      this.stopAll = true;
+      this.gridData.stopAll = true;
     },
     getDivs() {
       return document.querySelectorAll(".grid-container > li");
@@ -236,33 +223,28 @@ export default {
     colorRandomizer(domElement) {
       if (this.isOn) {
         let randomColor = Math.floor(
-          Math.random() * this.availableColors.length
+          Math.random() * this.gridData.availableColors.length
         );
         let randomBorderColor = Math.floor(
-          Math.random() * this.availableBorderColors.length
+          Math.random() * this.gridData.availableBorderColors.length
         );
-        domElement.style.backgroundColor = this.availableColors[randomColor];
-        domElement.style.borderColor = this.availableBorderColors[
+        domElement.style.backgroundColor = this.gridData.availableColors[
+          randomColor
+        ];
+        domElement.style.borderColor = this.gridData.availableBorderColors[
           randomBorderColor
         ];
       }
     },
     timer(speed) {
-      this.stopAll = false;
+      this.gridData.stopAll = false;
       let blinker = setInterval(() => {
         this.cycleElements(speed, this.getDivs());
       }, this.updatedSpeed);
     },
     gridSizer(size) {
-      this.columns = "repeat(" + size + ", 1fr)";
-      this.rows = "repeat(" + size + ", 1fr)";
-    },
-    addColors(list, inputColor) {
-      list.push(inputColor);
-      inputColor = "";
-    },
-    removeColor(list, index) {
-      list.splice(index, 1);
+      this.gridData.columns = "repeat(" + size + ", 1fr)";
+      this.gridData.rows = "repeat(" + size + ", 1fr)";
     },
     exportCode() {
       let dynamicCss = document.getElementById("thegrid").style.cssText;
@@ -272,9 +254,9 @@ export default {
   },
   created() {
     eventBus.$on("dimensionsWereChanged", data => {
-      this.gridSize = data.gridSize;
-      this.height = data.height;
-      this.width = data.width;
+      this.gridData.gridSize = data.gridSize;
+      this.gridData.height = data.height;
+      this.gridData.width = data.width;
     });
     eventBus.$on("ratesWereChanged", data => {
       this.updatedSpeed = data.blinkRate;
@@ -282,17 +264,32 @@ export default {
     });
 
     eventBus.$on("gapsWereChanged", data => {
-      this.xGap = data.xGap;
-      this.yGap = data.yGap;
+      this.gridData.xGap = data.xGap;
+      this.gridData.yGap = data.yGap;
     });
 
     eventBus.$on("skewWasChanged", data => {
-      this.matrix.skewX = data.skewX;
-      this.matrix.skewY = data.skewY;
+      this.gridData.matrix.skewX = data.skewX;
+      this.gridData.matrix.skewY = data.skewY;
     });
 
     eventBus.$on("colorsWereChanged", data => {
-      this.availableColors = data.availableColors;
+      this.gridData.availableColors = data.availableColors;
+    });
+
+    eventBus.$on("borderWasChanged", data => {
+      this.gridData.borderStyle = data.borderStyle;
+      this.gridData.borderSize = data.borderSize;
+      this.gridData.availableBorderColors = data.availableBorderColors;
+      this.gridData.radius = data.radius;
+    });
+
+    eventBus.$on("opacityOrPerspectiveChanged", data => {
+      this.gridData.opacitySetting = data.opacitySetting;
+      this.gridData.perspectiveValue = data.perspectiveValue;
+      this.gridData.xRotation = data.xRotation;
+      this.gridData.yRotation = data.yRotation;
+      this.gridData.zRotation = data.zRotation;
     });
   },
   mounted() {
