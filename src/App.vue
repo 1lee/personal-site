@@ -11,4 +11,14 @@ export default {
 </script>
 
 <style>
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
 </style>

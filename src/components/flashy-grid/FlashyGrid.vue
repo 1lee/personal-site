@@ -42,6 +42,7 @@
 
     <div class="code-export" v-if="codeBoxVisible">
       <export-template
+        :gridCss="gridCss"
         :gridData="gridData"
         :blocks="blocks"
         :updatedSpeed="updatedSpeed"
@@ -129,11 +130,6 @@ export default {
     }
   },
   computed: {
-    nodeCrawl() {
-      this.isOn = true;
-      // this.stopAll = false;
-      this.timer(this.updatedSpeed);
-    },
     heightWidth() {
       return {
         height: this.gridData.height + "vh",
@@ -292,8 +288,10 @@ export default {
       this.gridData.zRotation = data.zRotation;
     });
   },
-  mounted() {
-    this.nodeCrawl();
+  beforeMount() {
+    this.isOn = true;
+    this.stopAll = false;
+    this.timer(this.updatedSpeed);
   }
 };
 </script>
@@ -355,6 +353,6 @@ export default {
   z-index: -50;
 }
 .item {
-  background-color: pink;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 </style>

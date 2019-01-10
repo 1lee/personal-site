@@ -1,7 +1,16 @@
-<template></template>
+<template>
+  <div>
+    <bg></bg>
+  </div>
+</template>
 
 <script>
-export default {};
+import bg from "./BackgroundEffect";
+export default {
+  components: {
+    bg
+  }
+};
 </script>
 
 <style>

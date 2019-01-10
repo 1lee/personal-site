@@ -1,6 +1,6 @@
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
-import Projects from "./components/flashy-grid/Projects.vue";
+import Projects from "./components/Projects.vue";
 import Blog from "./components/Blog.vue";
 import Contact from "./components/Contact.vue";
 

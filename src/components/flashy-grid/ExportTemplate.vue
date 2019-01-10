@@ -1,6 +1,8 @@
 <template>
   <div>
-    #thegrid { {{ gridCss }} }
+    #thegrid { {{ gridCss }}
+    transform: skewX({{ gridData.matrix.skewX }}deg)
+    skewY({{gridData.matrix.skewY}}deg); }
     <br>
     .grid-container {
     position: absolute;
@@ -12,6 +14,9 @@
     margin-left: 0;
     z-index: -50;
     }
+    .grid-container > li {
+    transition: all {{ transitionRate }}s;
+    }
     <br>new Vue({
     <br>el: '#thegrid',
     <br>
@@ -22,8 +27,7 @@
     width: {{ gridData.width }},
     <br>
     blocks: {{ blocks }},
-    <br>
-    isOn: {{ gridData.isOn }},
+    <br>isOn: true,
     <br>
     availableColors: {{ gridData.availableColors}},
     <br>
@@ -39,7 +43,7 @@
     <br>
     borderSize: {{ gridData.borderSize }},
     <br>
-    borderStyle: {{ gridData.borderStyle }},
+    borderStyle: {{ gridData.borderStyle | orReturnEmptyString }},
     <br>
     transitionRate: {{ transitionRate }},
     <br>
@@ -62,20 +66,13 @@
     opacitySetting: {{ gridData.opacitySetting }},
     <br>template:`&#60;ul id="thegrid" class="grid-container">
     &#60;li
-    class="item"
+    class="item trans"
     v-for="block in blocks"
     :key="blocks.indexOf(block)"
     v-if="blocks.length > 1"
     >&#60;/li>
     &#60;/ul>`
     },
-    <br>computed: {
-    <br>nodeCrawl() {
-    <br>this.isOn = true;
-    <br>this.stopAll = false;
-    <br>this.timer(this.updatedSpeed);
-    <br>}
-    <br>},
     <br>methods: {
     <br>getDivs() {
     <br>return document.querySelectorAll(".grid-container > li");
@@ -117,10 +114,11 @@
     }
     }
     <br>},
-    <br>
-    created(){
+    <br>created(){
     this.renderHTML();
-    this.nodeCrawl();
+    <br>this.isOn = true;
+    <br>this.stopAll = false;
+    <br>this.timer(this.updatedSpeed);
     }
     <br>});
     <br>
@@ -129,7 +127,7 @@
 
 <script>
 export default {
-  props: ["gridData", "blocks", "updatedSpeed", "transitionRate"],
+  props: ["gridCss", "gridData", "blocks", "updatedSpeed", "transitionRate"],
   filters: {
     orReturnEmptyString(value) {
       if (value !== "") {
