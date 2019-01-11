@@ -1,18 +1,19 @@
 <template>
   <div class="theUi">
-    <ui-dimensions class="dimensions"></ui-dimensions>
+    <img class="texture" src="../../../assets/carbon-fiber.jpg" alt>
+    <ui-dimensions class="dimensions flush-left-column"></ui-dimensions>
 
-    <ui-rates class="rates"></ui-rates>
+    <ui-rates class="rates flush-left-column"></ui-rates>
 
-    <ui-gaps class="gaps"></ui-gaps>
+    <ui-gaps class="gaps flush-left-column"></ui-gaps>
 
-    <ui-skew class="skew"></ui-skew>
+    <ui-skew class="skew flush-left-column"></ui-skew>
 
-    <ui-color class="color"></ui-color>
+    <ui-color class="color flush-left-column"></ui-color>
 
-    <ui-border class="border"></ui-border>
+    <ui-border class="border flush-left-column"></ui-border>
 
-    <ui-footer class="footer"></ui-footer>
+    <ui-footer class="footer flush-left-column"></ui-footer>
   </div>
 </template>
 
@@ -39,15 +40,23 @@ export default {
 </script>
 
 <style scoped>
+.texture {
+  opacity: 0.6;
+}
 .theUi {
   margin-top: 70px;
   display: grid;
-  grid-template-columns: 20px [leftMargin] auto [uiEnd] 0.6fr;
+  grid-template-columns: 20px [leftMargin] auto [uiEnd] 0.8fr;
+  grid-template-rows: 70px [topMargin] auto [dimension-rate-line] auto [rate-gap-line] auto [gap-skew-line] auto;
+  overflow: hidden;
 }
-.dimensions,
-.rates,
-.gaps {
+.flush-left-column {
   grid-column: 2 / span 1;
-  background-color: rgba(84, 146, 247, 0.4);
+}
+.dimensions {
+  grid-row: topMargin / 1;
+}
+.rates {
+  grid-row: dimension-rate-line / 2;
 }
 </style>

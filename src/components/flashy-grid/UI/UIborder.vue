@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="control-panel container">
+    <div class="container">
       <div class="row">
         <div class="col-9">
           <div class="input-group-sm mb-3">
@@ -123,4 +123,11 @@ export default {
 </script>
 
 <style>
+.color-list {
+  list-style-type: none;
+}
+.color-list li {
+  cursor: pointer;
+  display: inline;
+}
 </style>

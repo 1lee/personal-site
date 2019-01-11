@@ -276,17 +276,6 @@ export default {
 #element {
   min-height: 100vh;
 }
-
-.footer-panel {
-  position: fixed;
-  height: auto;
-  width: 60vw;
-  margin: 15px;
-  padding: 10px;
-  right: 0;
-  bottom: 1%;
-  background-color: rgba(110, 110, 110, 0.8);
-}
 .code-export {
   position: fixed;
   overflow: auto;
@@ -300,22 +289,6 @@ export default {
   background-color: rgba(110, 110, 110, 0.8);
   color: white;
   font-size: small;
-}
-.color-field {
-  list-style-type: none;
-}
-.color-list {
-  list-style-type: none;
-}
-.color-list li {
-  cursor: pointer;
-  display: inline;
-}
-.reverseSlider {
-  transform: rotateZ(180deg);
-}
-.verticalSlider {
-  transform: rotateZ(90deg);
 }
 
 .grid-container {

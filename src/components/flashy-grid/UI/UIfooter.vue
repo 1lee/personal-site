@@ -1,21 +1,7 @@
 <template>
   <div>
-    <div class="container-fluid footer-panel float-right">
-      <div class="row justify-content-end">
-        <div class="col-4">
-          <h6 class="text-white">Opacity</h6>
-          <input
-            class="opacity"
-            type="range"
-            min="0"
-            max="1"
-            step=".01"
-            value="opacity"
-            v-model="opacitySetting"
-            @input="changeOpacityAndPerspective"
-          >
-        </div>
-
+    <div class="container-fluid">
+      <div class="row justify-content-start">
         <div class="col-2">
           <h6 class="text-white">Perspective</h6>
           <input
@@ -61,6 +47,21 @@
             min="-180"
             max="180"
             v-model="zRotation"
+            @input="changeOpacityAndPerspective"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <h6 class="text-white">Opacity</h6>
+          <input
+            class="opacity"
+            type="range"
+            min="0"
+            max="1"
+            step=".01"
+            value="opacity"
+            v-model="opacitySetting"
             @input="changeOpacityAndPerspective"
           >
         </div>

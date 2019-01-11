@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="control-panel container">
-      <hr>
       <div class="row">
         <div class="col-3">
           <h6 class="text-white">Blink Rate</h6>
@@ -17,7 +16,7 @@
           >
         </div>
         <div class="col-3">
-          <h6 class="text-white">Transition Rate</h6>
+          <h6 class="text-white">Transition</h6>
           <input
             class="transitionRate reverseSlider text-white"
             type="range"
@@ -55,5 +54,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.reverseSlider {
+  transform: rotateZ(180deg);
+}
 </style>
