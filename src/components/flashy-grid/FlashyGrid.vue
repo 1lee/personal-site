@@ -14,21 +14,9 @@
       ></li>
       <!-- END block -->
     </ul>
+
+    <ps-u-i></ps-u-i>
     <!---------------------------------------------------------------------------------------------------------->
-    <ui-dimensions></ui-dimensions>
-
-    <ui-rates></ui-rates>
-
-    <ui-gaps></ui-gaps>
-
-    <ui-skew></ui-skew>
-
-    <ui-color></ui-color>
-
-    <ui-border></ui-border>
-
-    <ui-footer></ui-footer>
-
     <div class="row justify-content-end" v-if="!codeBoxVisible">
       <div class="col-3">
         <button class="btn btn-primary btn-light btn-sm" @click="exportCode()">Get Code</button>
@@ -56,26 +44,14 @@
 import { eventBus } from "../../main.js";
 import { dataBus } from "./busMethods.js";
 
-import UIdimensions from "./UI/UIdimensions";
-import UIrates from "./UI/UIrates";
-import UIgaps from "./UI/UIgaps";
-import UIskew from "./UI/UIskew";
-import UIcolor from "./UI/UIcolor";
-import UIborder from "./UI/UIborder";
-import UIfooter from "./UI/UIfooter";
+import psUI from "./UI/UIwrapper";
 
 import ExportTemplate from "./ExportTemplate";
 
 export default {
   components: {
-    exportTemplate: ExportTemplate,
-    "ui-dimensions": UIdimensions,
-    "ui-rates": UIrates,
-    "ui-gaps": UIgaps,
-    "ui-skew": UIskew,
-    "ui-color": UIcolor,
-    "ui-border": UIborder,
-    "ui-footer": UIfooter
+    psUI,
+    exportTemplate: ExportTemplate
   },
   data() {
     return {
@@ -298,7 +274,7 @@ export default {
 
 <style>
 #element {
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 .footer-panel {

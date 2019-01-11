@@ -1,39 +1,7 @@
 <template>
   <div id="home">
-    <img class="wallp" src="../assets/water001.jpg" alt>
+    <!--<img class="wallp" src="../assets/water001.jpg" alt>-->
     <bg></bg>
-    <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark"
-      style="background-color: rgba(0, 71, 186, 0.3)"
-    >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <router-link to="/about" class="text-white">About</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/projects" class="text-white">Projects</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/blog" class="text-white">Blog</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/contact" class="text-white">Contact</router-link>
-          </li>
-        </ul>
-      </div>
-    </nav>
     <div class="jumbotron">
       <h1 class="display-3 text-left text-primary">Hi, I'm Lee!</h1>
       <p class="lead">Tech Enthusiast. Creative Liason. Entrepreneur.</p>

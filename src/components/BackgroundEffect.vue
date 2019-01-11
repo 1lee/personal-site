@@ -160,8 +160,7 @@ export default {
       }
     }
   },
-  created() {},
-  beforeMount() {
+  created() {
     this.isOn = true;
     this.stopAll = false;
     this.timer(this.updatedSpeed);

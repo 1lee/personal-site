@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="control-panel container">
-      <div class="row component">
+      <div class="row component justify-content-left">
         <div class="col-3">
           <h6 class="text-white">Dimensions</h6>
           <input
