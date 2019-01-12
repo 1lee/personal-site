@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="container-fluid">
-      <div class="row justify-content-start">
-        <div class="col-2">
+    <div class="control-panel container">
+      <div class="row">
+        <div class="col-3">
           <h6 class="text-white">Perspective</h6>
           <input
             type="number"
@@ -14,7 +14,7 @@
             @input="changeOpacityAndPerspective"
           >
         </div>
-        <div class="col-2">
+        <div class="col-3">
           <h6 class="text-white">X Rotation</h6>
           <input
             type="number"
@@ -26,7 +26,7 @@
             @input="changeOpacityAndPerspective"
           >
         </div>
-        <div class="col-2">
+        <div class="col-3">
           <h6 class="text-white">Y Rotation</h6>
           <input
             type="number"
@@ -38,7 +38,7 @@
             @input="changeOpacityAndPerspective"
           >
         </div>
-        <div class="col-2">
+        <div class="col-3">
           <h6 class="text-white">Z Rotation</h6>
           <input
             type="number"
@@ -47,21 +47,6 @@
             min="-180"
             max="180"
             v-model="zRotation"
-            @input="changeOpacityAndPerspective"
-          >
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <h6 class="text-white">Opacity</h6>
-          <input
-            class="opacity"
-            type="range"
-            min="0"
-            max="1"
-            step=".01"
-            value="opacity"
-            v-model="opacitySetting"
             @input="changeOpacityAndPerspective"
           >
         </div>
@@ -76,7 +61,6 @@ import { eventBus } from "../../../main.js";
 export default {
   data() {
     return {
-      opacitySetting: 1,
       perspectiveValue: 0,
       xRotation: 0,
       yRotation: 0,
@@ -86,7 +70,6 @@ export default {
   methods: {
     changeOpacityAndPerspective() {
       eventBus.$emit("opacityOrPerspectiveChanged", {
-        opacitySetting: this.opacitySetting,
         perspectiveValue: this.perspectiveValue,
         xRotation: this.xRotation,
         yRotation: this.yRotation,
@@ -97,5 +80,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.control-panel {
+  padding: 7px 10px 7px 10px;
+}
 </style>

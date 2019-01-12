@@ -1,5 +1,6 @@
 <template>
   <div id="element">
+    <div class="canvas"></div>
     <ul
       id="thegrid"
       class="grid-container"
@@ -22,6 +23,7 @@
         <button class="btn btn-primary btn-light btn-sm" @click="exportCode()">Get Code</button>
       </div>
     </div>
+    
     <div class="row justify-content-end" v-if="codeBoxVisible">
       <div class="col-3">
         <button class="btn btn-primary btn-light btn-sm" @click="exportCode()">Close Code Box</button>
@@ -46,12 +48,12 @@ import { dataBus } from "./busMethods.js";
 
 import psUI from "./UI/UIwrapper";
 
-import ExportTemplate from "./ExportTemplate";
+import UIExportTemplate from "./UI/UIExportTemplate";
 
 export default {
   components: {
     psUI,
-    exportTemplate: ExportTemplate
+    exportTemplate: UIExportTemplate
   },
   data() {
     return {
@@ -275,6 +277,13 @@ export default {
 <style>
 #element {
   min-height: 100vh;
+}
+.canvas {
+  position: absolute;
+  background-color: black;
+  z-index: -2000;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 .code-export {
   position: fixed;

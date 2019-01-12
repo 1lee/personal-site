@@ -55,6 +55,10 @@ export default {
 </script>
 
 <style scoped>
+.control-panel {
+  padding: 7px 10px 7px 10px;
+  box-shadow: 0 0.2px 0.2px 0.2px white;
+}
 .reverseSlider {
   transform: rotateZ(180deg);
 }

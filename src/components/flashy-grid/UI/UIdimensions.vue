@@ -69,6 +69,7 @@ export default {
 
 <style scoped>
 .control-panel {
-  padding: 15px 10px 7px 10px;
+  padding: 14px 10px 7px 10px;
+  box-shadow: 0 0.2px 0.2px 0.2px white;
 }
 </style>

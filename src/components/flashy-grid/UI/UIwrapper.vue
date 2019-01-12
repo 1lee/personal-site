@@ -1,6 +1,5 @@
 <template>
   <div class="theUi">
-    <img class="texture" src="../../../assets/carbon-fiber.jpg" alt>
     <ui-dimensions class="dimensions flush-left-column"></ui-dimensions>
 
     <ui-rates class="rates flush-left-column"></ui-rates>
@@ -21,7 +20,6 @@
 import UIdimensions from "./UIdimensions";
 import UIrates from "./UIrates";
 import UIgaps from "./UIgaps";
-import UIskew from "./UIskew";
 import UIcolor from "./UIcolor";
 import UIborder from "./UIborder";
 import UIfooter from "./UIfooter";
@@ -31,27 +29,35 @@ export default {
     "ui-dimensions": UIdimensions,
     "ui-rates": UIrates,
     "ui-gaps": UIgaps,
-    "ui-skew": UIskew,
     "ui-color": UIcolor,
     "ui-border": UIborder,
     "ui-footer": UIfooter
+  },
+  data() {
+    return {
+      codeBoxVisible: false
+    };
+  },
+  methods: {
+    exportCode() {
+      let dynamicCss = document.getElementById("thegrid").style.cssText;
+      this.gridCss = dynamicCss;
+      this.codeBoxVisible = !this.codeBoxVisible;
+    }
   }
 };
 </script>
 
 <style scoped>
-.texture {
-  opacity: 0.6;
-}
 .theUi {
-  margin-top: 70px;
+  margin-top: 67px;
   display: grid;
   grid-template-columns: 20px [leftMargin] auto [uiEnd] 0.8fr;
   grid-template-rows: 70px [topMargin] auto [dimension-rate-line] auto [rate-gap-line] auto [gap-skew-line] auto;
-  overflow: hidden;
 }
 .flush-left-column {
   grid-column: 2 / span 1;
+  background-color: rgba(36, 25, 25, 0.7);
 }
 .dimensions {
   grid-row: topMargin / 1;

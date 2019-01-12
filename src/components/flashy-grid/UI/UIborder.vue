@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="control-panel container">
       <div class="row">
         <div class="col-9">
           <div class="input-group-sm mb-3">
@@ -39,7 +39,6 @@
           >
         </div>
       </div>
-
       <div class="row">
         <div class="col-9">
           <div class="border-color-picker">
@@ -122,7 +121,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.control-panel {
+  padding: 7px 10px 7px 10px;
+  box-shadow: 0 0.2px 0.2px 0.2px white;
+}
 .color-list {
   list-style-type: none;
 }
