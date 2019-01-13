@@ -83,5 +83,6 @@ export default {
 <style scoped>
 .control-panel {
   padding: 7px 10px 7px 10px;
+  background-color: rgba(36, 25, 25, 0.7);
 }
 </style>

@@ -71,5 +71,6 @@ export default {
 .control-panel {
   padding: 14px 10px 7px 10px;
   box-shadow: 0 0.2px 0.2px 0.2px white;
+  background-color: rgba(36, 25, 25, 0.7);
 }
 </style>

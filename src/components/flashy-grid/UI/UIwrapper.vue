@@ -6,13 +6,13 @@
 
     <ui-gaps class="gaps flush-left-column"></ui-gaps>
 
-    <ui-skew class="skew flush-left-column"></ui-skew>
-
     <ui-color class="color flush-left-column"></ui-color>
 
     <ui-border class="border flush-left-column"></ui-border>
 
     <ui-footer class="footer flush-left-column"></ui-footer>
+
+    <ui-export-button class="ui-export-button flush-left-column"></ui-export-button>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ import UIgaps from "./UIgaps";
 import UIcolor from "./UIcolor";
 import UIborder from "./UIborder";
 import UIfooter from "./UIfooter";
+import UIExportButton from "./UIexportButton";
 
 export default {
   components: {
@@ -31,19 +32,8 @@ export default {
     "ui-gaps": UIgaps,
     "ui-color": UIcolor,
     "ui-border": UIborder,
-    "ui-footer": UIfooter
-  },
-  data() {
-    return {
-      codeBoxVisible: false
-    };
-  },
-  methods: {
-    exportCode() {
-      let dynamicCss = document.getElementById("thegrid").style.cssText;
-      this.gridCss = dynamicCss;
-      this.codeBoxVisible = !this.codeBoxVisible;
-    }
+    "ui-footer": UIfooter,
+    "ui-export-button": UIExportButton
   }
 };
 </script>
@@ -56,8 +46,7 @@ export default {
   grid-template-rows: 70px [topMargin] auto [dimension-rate-line] auto [rate-gap-line] auto [gap-skew-line] auto;
 }
 .flush-left-column {
-  grid-column: 2 / span 1;
-  background-color: rgba(36, 25, 25, 0.7);
+  grid-column: 2 / uiEnd;
 }
 .dimensions {
   grid-row: topMargin / 1;

@@ -41,23 +41,20 @@
       </div>
       <div class="row">
         <div class="col-9">
-          <div class="border-color-picker">
-            <div class="input-group-sm">
-              <input
-                type="text"
-                class="form-control"
-                v-model="inputBorderColor"
-                placeholder="Select Border Color"
-                aria-label="Select color"
-                aria-describedby="button-addon4"
-                @keydown.enter="addColors(availableBorderColors,inputBorderColor)"
-                @keyup.enter="inputBorderColor = ''"
-                @input="changeBorder"
-              >
-            </div>
+          <div class="input-group-sm mb-3">
+            <input
+              type="text"
+              class="form-control"
+              v-model="inputBorderColor"
+              placeholder="Select Border Color"
+              aria-label="Select color"
+              aria-describedby="button-addon4"
+              @keydown.enter="addColors(availableBorderColors,inputBorderColor)"
+              @keyup.enter="inputBorderColor = ''"
+              @input="changeBorder"
+            >
           </div>
         </div>
-
         <div class="col-3">
           <h6 class="text-white">Border radius</h6>
           <input
@@ -73,7 +70,7 @@
       </div>
 
       <div class="row">
-        <div class="col-12">
+        <div class="col-6">
           <ul class="color-list">
             <li
               class="badge badge-pill badge-light"
@@ -124,7 +121,8 @@ export default {
 <style scoped>
 .control-panel {
   padding: 7px 10px 7px 10px;
-  box-shadow: 0 0.2px 0.2px 0.2px white;
+  /*box-shadow: 0 0.2px 0.2px 0.2px white;*/
+  background-color: rgba(36, 25, 25, 0.7);
 }
 .color-list {
   list-style-type: none;

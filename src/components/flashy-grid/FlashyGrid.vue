@@ -18,19 +18,7 @@
 
     <ps-u-i></ps-u-i>
     <!---------------------------------------------------------------------------------------------------------->
-    <div class="row justify-content-end" v-if="!codeBoxVisible">
-      <div class="col-3">
-        <button class="btn btn-primary btn-light btn-sm" @click="exportCode()">Get Code</button>
-      </div>
-    </div>
-    
-    <div class="row justify-content-end" v-if="codeBoxVisible">
-      <div class="col-3">
-        <button class="btn btn-primary btn-light btn-sm" @click="exportCode()">Close Code Box</button>
-      </div>
-    </div>
-
-    <div class="code-export" v-if="codeBoxVisible">
+    <div v-if="codeBoxVisible">
       <export-template
         :gridCss="gridCss"
         :gridData="gridData"
@@ -175,6 +163,10 @@ export default {
     },
     transitionRate: function newTransitionRate() {
       this.timer(this.updatedSpeed);
+    },
+    codeBoxVisible: function exportCss() {
+      let dynamicCss = document.getElementById("thegrid").style.cssText;
+      this.gridCss = dynamicCss;
     }
   },
   methods: {
@@ -219,11 +211,6 @@ export default {
     gridSizer(size) {
       this.gridData.columns = "repeat(" + size + ", 1fr)";
       this.gridData.rows = "repeat(" + size + ", 1fr)";
-    },
-    exportCode() {
-      let dynamicCss = document.getElementById("thegrid").style.cssText;
-      this.gridCss = dynamicCss;
-      this.codeBoxVisible = !this.codeBoxVisible;
     }
   },
   created() {
@@ -265,6 +252,11 @@ export default {
       this.gridData.yRotation = data.yRotation;
       this.gridData.zRotation = data.zRotation;
     });
+
+    eventBus.$on("exportRequested", data => {
+      this.codeBoxVisible = data.codeBoxVisible;
+      this.dataRefreshed = true;
+    });
   },
   beforeMount() {
     this.isOn = true;
@@ -285,21 +277,6 @@ export default {
   min-height: 100vh;
   min-width: 100vw;
 }
-.code-export {
-  position: fixed;
-  overflow: auto;
-  height: 70vh;
-  width: 60vw;
-  width: 60vw;
-  margin: 15px;
-  padding: 10px;
-  top: 1%;
-  right: 0;
-  background-color: rgba(110, 110, 110, 0.8);
-  color: white;
-  font-size: small;
-}
-
 .grid-container {
   position: absolute;
   height: 100%;
