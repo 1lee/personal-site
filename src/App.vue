@@ -20,11 +20,9 @@ export default {
 html {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
 }
 body {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
 }
 </style>
