@@ -1,12 +1,14 @@
 <template>
   <div id="flashyGrid">
     <ul id="thegrid" class="grid-container">
-      <li
-        class="item"
-        v-for="block in blocks"
-        :key="blocks.indexOf(block)"
-        v-if="blocks.length > 1"
-      ></li>
+      <li class="item" v-for="unit in blocks" :key="blocks.indexOf(unit)" v-if="blocks.length > 1">
+        <svg width="0" height="0">
+          <defs>
+            <clipPath id="myClip"></clipPath>
+          </defs>
+        </svg>
+      </li>
+      <!-- END block-->
     </ul>
   </div>
 </template>
@@ -15,10 +17,202 @@
 export default {
   data() {
     return {
-      gridSize: 8,
-      height: 144,
-      width: 169,
+      gridSize: 16,
+      height: 102,
+      width: 100,
       blocks: [
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
+        "block",
         "block",
         "block",
         "block",
@@ -86,38 +280,40 @@ export default {
       ],
       isOn: true,
       availableColors: [
-        "rgba(0, 71, 186, 0.3)",
-        "rgba(255,255,255,0.3)",
-        "rgba(0,0,0,0.3)",
-        "rgba(200, 203, 209, 0.3)",
-        "rgba(252, 252, 22, 0.15)",
-        "rgba(1, 94, 160, .7)"
+        "#000000",
+        "#FFFFFF",
+        "#000000",
+        "#000000",
+        "#1C1C1C",
+        "#141414",
+        "#FFFFFF"
       ],
       availableBorderColors: ["white"],
-      updatedSpeed: 3000,
-      columns: "repeat(8, 1fr)",
-      rows: "repeat(8, 1fr)",
+      availableShapes: ["unset"],
+      updatedSpeed: 100,
+      columns: "repeat(16, 1fr)",
+      rows: "repeat(16, 1fr)",
       matrix: {
         scaleX: 0,
-        skewX: "8",
-        skewY: "27",
+        skewX: 0,
+        skewY: 0,
         scaleY: 0,
         translateX: 0,
         translateY: 0
       },
       borderSize: 0,
-      borderStyle: "",
-      transitionRate: 0.7,
+      borderStyle: "none",
+      transitionRate: 500,
       stopAll: false,
-      xGap: 1,
-      yGap: 0,
+      xGap: 8,
+      yGap: 5.25,
       radius: 0,
-      perspectiveValue: 106,
-      yRotation: 4,
-      xRotation: -11,
-      zRotation: 27,
+      perspectiveValue: 21,
+      yRotation: 0,
+      xRotation: 0,
+      zRotation: 0,
       opacitySetting: 1,
-      template: `<ul id="thegrid" class="grid-container"> <li class="item trans" v-for="block in blocks" :key="blocks.indexOf(block)" v-if="blocks.length > 1" ></li> </ul>`
+      template: ` <ul id="thegrid" class="grid-container"> <li class="item trans" v-for="block in blocks" :key="blocks.indexOf(block)" v-if="blocks.length > 1" :style="[{borderSize: borderSize}, {borderStyle: borderStyle}, {borderRadius: radius + '%'}, {'transition': transitionRate + 's'}, {'transform': 'skew(' + matrix.skewX + 'deg, ' + matrix.skewY + 'deg)'}]" > <svg width="0" height="0"> <defs> <clipPath id="myClip"></clipPath> </defs> </svg> </li> </ul> `
     };
   },
   methods: {
@@ -141,10 +337,14 @@ export default {
         let randomBorderColor = Math.floor(
           Math.random() * this.availableBorderColors.length
         );
+        let randomShapes = Math.floor(
+          Math.random() * this.availableShapes.length
+        );
         domElement.style.backgroundColor = this.availableColors[randomColor];
         domElement.style.borderColor = this.availableBorderColors[
           randomBorderColor
         ];
+        domElement.style.clipPath = this.availableShapes[randomShapes];
       }
     },
     timer(speed) {
@@ -169,18 +369,14 @@ export default {
 </script>
 
 <style scoped>
-#flashyGrid {
-  height: 100%;
-  width: 100%;
-}
 #thegrid {
-  height: 144vh;
-  width: 169vw;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1% 0%;
-  opacity: 1;
-  transform: perspective(106px) rotateY(4deg) rotateX(-11deg) rotateZ(27deg);
+  height: 90vh;
+  width: 100vw;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 8% 5.25%;
+  transform: perspective(21px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  overflow: hidden;
 }
 .grid-container {
   position: absolute;
@@ -190,13 +386,9 @@ export default {
   list-style-type: none;
   padding-left: 0;
   margin-left: 0;
-  z-index: -50;
+  z-index: -1;
 }
-.grid-container > li {
-  transition: all 1.75s;
-}
-
 .item {
-  background-color: rgba(255, 255, 255, 0);
+  transition: all 2.3s;
 }
 </style>

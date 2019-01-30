@@ -17,12 +17,7 @@ export default {
 </script>
 
 <style>
-html {
-  height: 100vh;
-  width: 100vw;
-}
 body {
-  height: 100vh;
-  width: 100vw;
+  background-color: rgb(53, 53, 53);
 }
 </style>

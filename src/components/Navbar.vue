@@ -3,7 +3,7 @@
     <div class="row">
       <nav
         class="navbar fixed-top navbar-expand-lg navbar-dark"
-        style="background-color: rgba(0, 71, 186, 0.3)"
+        style="background-color: rgb(0, 0, 0)"
       >
         <router-link v-if="!onHomePage" to="/" class="navbar-brand display-3">
           <i>Lee!</i>
