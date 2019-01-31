@@ -17,7 +17,11 @@ export default {
 </script>
 
 <style>
+html,
 body {
   background-color: rgb(53, 53, 53);
+  height: 100vh;
+  width: 100vw;
+  /*overflow: hidden;*/
 }
 </style>

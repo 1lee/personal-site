@@ -1,5 +1,5 @@
 <template>
-  <div id="flashyGrid">
+  <div id="flashyGrid" class="wrapper">
     <ul id="thegrid" class="grid-container">
       <li class="item" v-for="unit in blocks" :key="blocks.indexOf(unit)" v-if="blocks.length > 1">
         <svg width="0" height="0">
@@ -369,6 +369,10 @@ export default {
 </script>
 
 <style scoped>
+#flashyGrid {
+  height: 90%;
+}
+
 #thegrid {
   height: 90vh;
   width: 100vw;
@@ -376,7 +380,6 @@ export default {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 8% 5.25%;
   transform: perspective(21px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-  overflow: hidden;
 }
 .grid-container {
   position: absolute;
@@ -389,6 +392,6 @@ export default {
   z-index: -1;
 }
 .item {
-  transition: all 2.3s;
+  transition: all 2s;
 }
 </style>

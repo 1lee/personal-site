@@ -1,20 +1,18 @@
 <template>
   <div id="home">
     <bg></bg>
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <div class="jumboT justify-items-center tilt">
-            <h1
-              class="display-4 text-white"
-              style="font-family: 'Major Mono Display', monospace
+    <div class="row">
+      <div class="col-8">
+        <div class="jumboT justify-items-center tilt">
+          <h1
+            class="display-4 text-white"
+            style="font-family: 'Major Mono Display', monospace
 "
-            >Hi, I'm Lee!</h1>
-            <p class="lead text-white">Tech Enthusiast. Creative Liason. Entrepreneur.</p>
-            <hr class="my-4">
-            <p class="text-white">How can I help you?</p>
-            <a class="btn btn-light btn-lg" href="#" role="button">Learn more</a>
-          </div>
+          >Hi, I'm Lee!</h1>
+          <p class="lead text-white">Tech Enthusiast. Creative Liason. Entrepreneur.</p>
+          <hr class="my-4">
+          <p class="text-white">How can I help you?</p>
+          <a class="btn btn-light btn-lg" href="#" role="button">Learn more</a>
         </div>
       </div>
     </div>
@@ -52,7 +50,7 @@ export default {
   margin-top: 67px;
   margin-left: 0;
   text-align: center;
-  height: 75%;
+  position: fixed;
 }
 
 .jumboT {
@@ -60,6 +58,7 @@ export default {
   background-color: black;
   padding: 15% 0 0 0;
   height: 70vh;
+  width: 60vw;
   margin-top: 10%;
   margin-right: auto;
   margin-left: auto;
@@ -122,5 +121,43 @@ export default {
 }
 .tilt {
   transform: rotateZ(-15deg);
+}
+.btn {
+  background: #a100cc;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+.btn:hover {
+  background: #e83c3c;
+  color: #fff;
+}
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #e83c3c;
+  transition: 400ms ease all;
+}
+.btn:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+.btn:hover:before,
+.btn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 </style>

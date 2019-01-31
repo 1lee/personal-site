@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
+  <div class="container wrapper">
     <div class="row">
       <nav
         class="navbar fixed-top navbar-expand-lg navbar-dark"
         style="background-color: rgb(0, 0, 0)"
       >
-        <router-link v-if="!onHomePage" to="/" class="navbar-brand display-3">
-          <i>Lee!</i>
+        <router-link to="/" class="navbar-brand display-3">
+          <img src="../assets/spades-token.svg" width="30" height="30">
         </router-link>
         <button
           class="navbar-toggler"
@@ -46,16 +46,6 @@ export default {
     return {
       onHomePage: true
     };
-  },
-  watch: {
-    $route: "displayNavbarBrand"
-  },
-  methods: {
-    displayNavbarBrand() {
-      if (this.$route.name != "Home") {
-        this.onHomePage = false;
-      }
-    }
   }
 };
 </script>
