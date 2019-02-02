@@ -388,8 +388,10 @@ export default {
   display: grid;
   list-style-type: none;
   padding-left: 0;
-  margin-left: 0;
+  margin-left: 20px;
+  margin-right: 20px;
   z-index: -1;
+  overflow: hidden;
 }
 .item {
   transition: all 2s;

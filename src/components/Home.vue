@@ -1,6 +1,5 @@
 <template>
   <div id="home">
-    <bg></bg>
     <div class="row">
       <div class="col-8">
         <div class="jumboT justify-items-center tilt">
@@ -25,11 +24,8 @@ import Projects from "./Projects";
 import Blog from "./Blog";
 import Contact from "./Contact";
 
-import bg from "./BackgroundEffect";
-
 export default {
   components: {
-    bg,
     psAbout: About,
     psProjects: Projects,
     psBlog: Blog,
@@ -54,7 +50,6 @@ export default {
 }
 
 .jumboT {
-  /*background: url("../assets/backgroundimage.jpg") no-repeat center center fixed;*/
   background-color: black;
   padding: 15% 0 0 0;
   height: 70vh;

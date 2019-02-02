@@ -3,76 +3,103 @@
     <!-- Page Content -->
     <div class="container">
       <!-- Page Heading -->
-      <h1 class="my-4">
-        Page Heading
-        <small>Secondary Text</small>
+      <br>
+      <h1 class="my-4 text-light title">
+        Projects
+        <span class="subtitle">and expressions</span>
       </h1>
-
-      <!-- Project One -->
-      <div class="row">
-        <div class="col-md-7">
-          <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt>
-          </a>
-        </div>
-        <div class="col-md-5">
-          <h3>Project One</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-          <a class="btn btn-primary" href="#">View Project</a>
-        </div>
-      </div>
-      <!-- /.row -->
-      <hr>
 
       <!-- Project Two -->
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-6">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt>
+            <video width="420" height="300" autoplay loop>
+              <source src="../assets/FlashyGrid.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
           </a>
         </div>
-        <div class="col-md-5">
-          <h3>Project Two</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore.</p>
-          <a class="btn btn-primary" href="#">View Project</a>
+        <div class="col-md-6">
+          <div class="card text-white mb-3 clip" style="background-color: #000;">
+            <div class="card-body">
+              <h5 class="card-title">Flashy Grid</h5>
+              <p
+                class="card-text"
+              >The Flashy Grid is an online tool for UI designers to quickly create elements leveraging the power of CSS grid.</p>
+              <a href="#" class="btn btn-primary float-right">Try It</a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- /.row -->
-      <hr>
+      <hr style="background-color: white;">
+
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-md-6">
+          <a href="#">
+            <video width="420" height="300" autoplay loop>
+              <source src="../assets/Factbook.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <div class="card text-white mb-3 clip" style="background-color: #000;">
+            <div class="card-body">
+              <h5 class="card-title">CIA World Factbook</h5>
+              <p
+                class="card-text"
+              >A UI implementation for the CIA World Factbook citing a JSON database. Built with Angular.</p>
+              <a href="#" class="btn btn-primary float-right">Check It Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+      <hr style="background-color: white;">
 
       <!-- Project Three -->
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-6">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt>
+            <video width="420" height="300" autoplay loop>
+              <source src="../assets/AKlogo.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
           </a>
         </div>
-        <div class="col-md-5">
-          <h3>Project Three</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-          <a class="btn btn-primary" href="#">View Project</a>
+        <div class="col-md-6">
+          <div class="card text-white mb-3 clip" style="background-color: #000;">
+            <div class="card-body">
+              <h5 class="card-title">Amenta's Key Logo</h5>
+              <p class="card-text">An animated SVG logo</p>
+              <a href="#" class="btn btn-primary float-right">See It</a>
+            </div>
+          </div>
         </div>
       </div>
       <!-- /.row -->
-      <hr>
+      <hr style="background-color: white;">
 
       <!-- Project Four -->
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-6">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt>
+            <video width="420" height="300" autoplay loop>
+              <source src="../assets/LoveSurvived.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
           </a>
         </div>
-        <div class="col-md-5">
-          <h3>Project Four</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-          <a class="btn btn-primary" href="#">View Project</a>
+        <div class="col-md-6">
+          <div class="card text-white mb-3 clip" style="background-color: #000;">
+            <div class="card-body">
+              <h5 class="card-title">A Personal Page</h5>
+              <p class="card-text">A freelance project.</p>
+              <a href="#" class="btn btn-primary float-right">Visit</a>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- /.row -->
-      <hr>
 
-      <!-- Pagination -->
+      <!-- Pagination 
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
@@ -95,13 +122,13 @@
             <span class="sr-only">Next</span>
           </a>
         </li>
-      </ul>
+      </ul>-->
     </div>
     <!-- /.container -->
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5" style="background-color: #000;">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; 1Lee 2019</p>
       </div>
       <!-- /.container -->
     </footer>
@@ -109,11 +136,84 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  methods: {}
+};
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Major+Mono+Display");
 .projects {
+  position: relative;
+  z-index: 1;
   margin-top: 85px;
+}
+.title {
+  font-family: "Major Mono Display", monospace;
+  font-size: 56px;
+}
+.subtitle {
+  font-size: 20px;
+}
+.clip {
+  padding: 40px;
+  opacity: 0.8;
+  -webkit-clip-path: polygon(
+    4% 1%,
+    28% 8%,
+    26% 0%,
+    51% 9%,
+    55% 0%,
+    79% 10%,
+    76% 1%,
+    97% 9%,
+    95% 36%,
+    100% 40%,
+    92% 66%,
+    98% 73%,
+    91% 95%,
+    96% 99%,
+    67% 96%,
+    69% 100%,
+    37% 94%,
+    45% 99%,
+    8% 91%,
+    19% 98%,
+    0% 89%,
+    3% 63%,
+    0% 57%,
+    1% 22%,
+    2% 28%
+  );
+  clip-path: polygon(
+    4% 1%,
+    28% 8%,
+    26% 0%,
+    51% 9%,
+    55% 0%,
+    79% 10%,
+    76% 1%,
+    97% 9%,
+    95% 36%,
+    100% 40%,
+    92% 66%,
+    98% 73%,
+    91% 95%,
+    96% 99%,
+    67% 96%,
+    69% 100%,
+    37% 94%,
+    45% 99%,
+    8% 91%,
+    19% 98%,
+    0% 89%,
+    3% 63%,
+    0% 57%,
+    1% 22%,
+    2% 28%
+  );
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <bg class="background-effect"></bg>
     <!-- Page Content -->
     <div class="container">
       <div class="row">
@@ -31,13 +30,7 @@
 </template>
 
 <script>
-import bg from "./BackgroundEffect";
-
-export default {
-  components: {
-    bg
-  }
-};
+export default {};
 </script>
 
 <style scoped>
@@ -47,7 +40,7 @@ export default {
 }
 
 .clip {
-  padding: 40px;
+  padding: 40px 60px 40px 40px;
 
   -webkit-clip-path: polygon(
     4% 1%,

@@ -21,14 +21,14 @@
         </button>
         <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <router-link to="/about" class="text-white">About</router-link>
-            </li>
             <li class="nav-item">
               <router-link to="/projects" class="text-white">Projects</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/blog" class="text-white">Blog</router-link>
+            </li>
+            <li class="nav-item active">
+              <router-link to="/about" class="text-white">About</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/contact" class="text-white">Contact</router-link>
