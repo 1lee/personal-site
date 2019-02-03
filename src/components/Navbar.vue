@@ -43,9 +43,7 @@
 <script>
 export default {
   data() {
-    return {
-      onHomePage: true
-    };
+    return {};
   }
 };
 </script>

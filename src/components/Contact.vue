@@ -43,7 +43,7 @@
                 </div>
               </div>
               <div class="col-auto my-1 float-right">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Send</button>
               </div>
             </form>
           </div>

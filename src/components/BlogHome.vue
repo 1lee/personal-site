@@ -3,7 +3,7 @@
     <div class="container">
       <br>
       <h1 class="my-4 text-light title">
-        Blogs
+        Blog
         <span class="subtitle">and reflections</span>
       </h1>
 
@@ -12,13 +12,18 @@
         <div class="col-md-8">
           <!-- Blog Post -->
           <div class="card mb-4 clip" style="background-color: #000;">
-            <img class="card-img-top" src="../assets/time.jpg" alt="Card image cap">
+            <router-link :to="{ name: 'blog001'}" class="text-white">
+              <img class="card-img-top" src="../assets/time.jpg" alt="Card image cap">
+            </router-link>
             <div class="card-body">
               <h2 class="card-title text-white">The No Time, No Space Developer part 1</h2>
               <p
                 class="card-text"
               >Teaching myself to code, while working full time in a non-IT job and rolling with the day-to-day punches of raising a young family has for me been a master’s class in time management. Make no mistake, it is hard, but not impossible. Here are some time-bending, space-bending, mind-bending suggestions to help you level up, where you otherwise could not.</p>
-              <a href="#" class="btn btn-primary float-right">Read More &rarr;</a>
+              <router-link
+                :to="{ name: 'blog001'}"
+                class="text-white btn btn-primary float-right"
+              >Read More &rarr;</router-link>
             </div>
             <div class="card-footer text-muted text-right">
               by
@@ -28,13 +33,18 @@
 
           <!-- Blog Post -->
           <div class="card mb-4 clip" style="background-color: #000;">
-            <img class="card-img-top" src="../assets/time.jpg" alt="Card image cap">
+            <router-link :to="{ name: 'blog002'}" class="text-white">
+              <img class="card-img-top owl" src="../assets/owl.jpg" alt="Card image cap">
+            </router-link>
             <div class="card-body">
-              <h2 class="card-title text-white">The No Time, No Space Developer part 1</h2>
+              <h2 class="card-title text-white">The No Time, No Space Developer part 2</h2>
               <p
-                class="card-text"
-              >Teaching myself to code, while working full time in a non-IT job and rolling with the day-to-day punches of raising a young family has for me been a master’s class in time management. Make no mistake, it is hard, but not impossible. Here are some time-bending, space-bending, mind-bending suggestions to help you level up, where you otherwise could not.</p>
-              <a href="#" class="btn btn-primary float-right">Read More &rarr;</a>
+                class="card-text text-light"
+              >Great! We've laid the ground work. You're saturated with information, you've got the tools for the job, and you're nestled cozily into your designated corner... Here's what to do next.</p>
+              <router-link
+                :to="{ name: 'blog002'}"
+                class="text-white btn btn-primary float-right"
+              >Read More &rarr;</router-link>
             </div>
             <div class="card-footer text-muted text-right">
               by
@@ -109,7 +119,10 @@ export default {};
 .subtitle {
   font-size: 20px;
 }
-
+.owl {
+  transform: scale(1.27);
+  margin-bottom: 60px;
+}
 .clip {
   padding: 60px 60px 40px 40px;
   -webkit-clip-path: polygon(

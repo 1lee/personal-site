@@ -21,7 +21,7 @@
 <script>
 import About from "./About";
 import Projects from "./Projects";
-import Blog from "./Blog";
+import Blog from "./BlogHome";
 import Contact from "./Contact";
 
 export default {
