@@ -12,7 +12,7 @@
       <!-- Project Two -->
       <div class="row">
         <div class="col-md-6">
-          <a href="#">
+          <a href="http://www.flashyGrid.com">
             <video width="420" height="300" autoplay loop>
               <source src="../assets/FlashyGrid.mp4" type="video/mp4">Your browser does not support the video tag.
             </video>
@@ -25,7 +25,7 @@
               <p
                 class="card-text"
               >The Flashy Grid is an online tool for UI designers to quickly create elements leveraging the power of CSS grid.</p>
-              <a href="#" class="btn btn-primary float-right">Try It</a>
+              <a href="http://www.flashyGrid.com" class="btn btn-primary float-right">Try It</a>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
       <!-- Project One -->
       <div class="row">
         <div class="col-md-6">
-          <a href="#">
+          <a href="https://1lee.github.io/">
             <video width="420" height="300" autoplay loop>
               <source src="../assets/Factbook.mp4" type="video/mp4">Your browser does not support the video tag.
             </video>
@@ -49,7 +49,7 @@
               <p
                 class="card-text"
               >A UI implementation for the CIA World Factbook citing a JSON database. Built with Angular.</p>
-              <a href="#" class="btn btn-primary float-right">Check It Out</a>
+              <a href="https://1lee.github.io/" class="btn btn-primary float-right">Check It Out</a>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
       <!-- Project Three -->
       <div class="row">
         <div class="col-md-6">
-          <a href="#">
+          <a href="https://github.com/1lee/AmentasKeyLogo/blob/master/logoclean.svg">
             <video width="420" height="300" autoplay loop>
               <source src="../assets/AKlogo.mp4" type="video/mp4">Your browser does not support the video tag.
             </video>
@@ -71,7 +71,10 @@
             <div class="card-body">
               <h5 class="card-title">Amenta's Key Logo</h5>
               <p class="card-text">An animated SVG logo</p>
-              <a href="#" class="btn btn-primary float-right">See It</a>
+              <a
+                href="https://github.com/1lee/AmentasKeyLogo/blob/master/logoclean.svg"
+                class="btn btn-primary float-right"
+              >See It</a>
             </div>
           </div>
         </div>
@@ -82,7 +85,7 @@
       <!-- Project Four -->
       <div class="row">
         <div class="col-md-6">
-          <a href="#">
+          <a href="http://www.lovesurvived.com">
             <video width="420" height="300" autoplay loop>
               <source src="../assets/LoveSurvived.mp4" type="video/mp4">Your browser does not support the video tag.
             </video>
@@ -93,7 +96,7 @@
             <div class="card-body">
               <h5 class="card-title">A Personal Page</h5>
               <p class="card-text">A freelance project.</p>
-              <a href="#" class="btn btn-primary float-right">Visit</a>
+              <a :href="loveSurvived" class="btn btn-primary float-right">Visit</a>
             </div>
           </div>
         </div>
@@ -138,7 +141,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      loveSurvived: "http://www.lovesurvived.com"
+    };
   },
   methods: {}
 };

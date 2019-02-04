@@ -79,20 +79,52 @@
           </ul>
         </div>
 
-        <!-- Sidebar Widgets Column -->
+        <!-- Sidebar Column -->
         <div class="col-md-4">
-          <!-- Search Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
+          <!-- Begin Mailchimp Signup Form -->
+          <div id="mc_embed_signup" class="subscribe-form">
+            <form
+              action="https://1-lee.us20.list-manage.com/subscribe/post?u=4477faaa170446b0e856fb2d3&amp;id=c271a7ed85"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate
+            >
+              <div id="mc_embed_signup_scroll">
+                <input
+                  type="email"
+                  value
+                  name="EMAIL"
+                  class="email"
+                  id="mce-EMAIL"
+                  placeholder="email address"
+                  required
+                >
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="b_4477faaa170446b0e856fb2d3_c271a7ed85"
+                    tabindex="-1"
+                    value
+                  >
+                </div>
+                <div class="clear">
+                  <input
+                    type="submit"
+                    value="Subscribe"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    class="button float-left"
+                  >
+                </div>
               </div>
-            </div>
+            </form>
           </div>
+
+          <!--End mc_embed_signup-->
         </div>
       </div>
       <!-- /.row -->
@@ -108,6 +140,18 @@ export default {};
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Major+Mono+Display");
 
+#mc_embed_signup {
+  color: #fff;
+  clear: left;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+
+.subscribe-form {
+  height: 100px;
+}
 .blog-home {
   margin-top: 87px;
 }
