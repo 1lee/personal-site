@@ -102,16 +102,12 @@
           <hr style="background-color: #fff;">
 
           <!-- Comments Form -->
-          <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
+          <div class="comments">
+            <vue-disqus
+              shortname="www-1-lee-com"
+              :identifier="page_id"
+              url="http://1-lee.com/blog/blog001"
+            ></vue-disqus>
           </div>
         </div>
 
@@ -135,6 +131,7 @@
     </div>
     <!-- /.container -->
     <!-- Footer -->
+    <br>
     <footer class="py-5" style="background-color: #000;">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; 1-LEE 2019</p>
@@ -234,6 +231,10 @@ export default {
     1% 22%,
     2% 28%
   );
+}
+.comments {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .back-button {
   position: fixed;
