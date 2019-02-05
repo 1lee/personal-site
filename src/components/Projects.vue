@@ -70,7 +70,7 @@
           <div class="card text-white mb-3 clip" style="background-color: #000;">
             <div class="card-body">
               <h5 class="card-title">Amenta's Key Logo</h5>
-              <p class="card-text">An animated SVG logo</p>
+              <p class="card-text">An animated SVG logo.</p>
               <a
                 href="https://github.com/1lee/AmentasKeyLogo/blob/master/logoclean.svg"
                 class="btn btn-primary float-right"
@@ -220,5 +220,14 @@ export default {
     1% 22%,
     2% 28%
   );
+}
+
+@media (max-width: 768px) {
+  .projects {
+    overflow: hidden;
+  }
+  .title {
+    font-size: 42px;
+  }
 }
 </style>

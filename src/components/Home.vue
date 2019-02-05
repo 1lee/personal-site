@@ -51,7 +51,7 @@ export default {
 
 .jumboT {
   background-color: black;
-  padding: 15% 0 0 0;
+  padding: 20% 0 0 0;
   height: 70vh;
   width: 60vw;
   margin-top: 10%;

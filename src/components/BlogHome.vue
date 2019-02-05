@@ -16,7 +16,7 @@
               <img class="card-img-top" src="../assets/time.jpg" alt="Card image cap">
             </router-link>
             <div class="card-body">
-              <h2 class="card-title text-white">The No Time, No Space Developer part 1</h2>
+              <h2 class="card-title text-white blog-title">The No Time, No Space Developer part 1</h2>
               <p
                 class="card-text"
               >Teaching myself to code, while working full time in a non-IT job and rolling with the day-to-day punches of raising a young family has for me been a master’s class in time management. Make no mistake, it is hard, but not impossible. Here are some time-bending, space-bending, mind-bending suggestions to help you level up, where you otherwise could not.</p>
@@ -37,7 +37,7 @@
               <img class="card-img-top owl" src="../assets/owl.jpg" alt="Card image cap">
             </router-link>
             <div class="card-body">
-              <h2 class="card-title text-white">The No Time, No Space Developer part 2</h2>
+              <h2 class="card-title text-white blog-title">The No Time, No Space Developer part 2</h2>
               <p
                 class="card-text text-light"
               >Great! We've laid the ground work. You're saturated with information, you've got the tools for the job, and you're nestled cozily into your designated corner... Here's what to do next.</p>
@@ -52,7 +52,7 @@
             </div>
           </div>
 
-          <!-- Blog Post -->
+          <!-- Blog Post
           <div class="card mb-4">
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             <div class="card-body">
@@ -66,9 +66,8 @@
               Posted on January 1, 2017 by
               <a href="#">Start Bootstrap</a>
             </div>
-          </div>
-
-          <!-- Pagination -->
+          </div>-->
+          <!-- Pagination
           <ul class="pagination justify-content-center mb-4">
             <li class="page-item">
               <a class="page-link" href="#">&larr; Older</a>
@@ -76,7 +75,7 @@
             <li class="page-item disabled">
               <a class="page-link" href="#">Newer &rarr;</a>
             </li>
-          </ul>
+          </ul>-->
         </div>
 
         <!-- Sidebar Column -->
@@ -163,6 +162,8 @@ export default {};
 .subtitle {
   font-size: 20px;
 }
+.blog-title {
+}
 .owl {
   transform: scale(1.27);
   margin-bottom: 60px;
@@ -223,5 +224,10 @@ export default {};
     1% 22%,
     2% 28%
   );
+}
+@media (max-width: 768px) {
+  .blog-title {
+    font-size: 16px;
+  }
 }
 </style>

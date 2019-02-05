@@ -142,4 +142,9 @@ export default {
     2% 28%
   );
 }
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 18px;
+  }
+}
 </style>

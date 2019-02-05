@@ -13,16 +13,16 @@
                 <br>
                 <br>In my adult life, I’ve had the benefit of experiencing the economy from many angles, from entry level to management, as well as from an entrepreneurial perspective. My professional experience has given me an holistic understanding of what makes businesses successful.
                 <br>
-                <br>I re-acquainted myself with code as an adult partially from a sense of nostalgia from when I coded as a youth, and because to me, IT is an inflection point where all of my talents come together for creative expression. It’s my earnest belief that our every work is a reflection, much like any work from DaVinci gives us pause. For me, it is important to do the job right, because our work is a representation of who we are.
+                <br>I re-acquainted myself with code as an adult partially from a sense of nostalgia from when I coded as a youth, and because to me, IT is an inflection point where all of my talents come together for creative expression. I love my work. I believe that our work is a reflection. It's important to do the job right. Our work is a representation of who we are.
               </p>
 
-              <a href="#" class="btn btn-primary float-right">Contact</a>
+              <router-link to="/contact" class="btn btn-primary float-right">Contact</router-link>
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <!--   <div class="col-sm-4">
           <img class="img-fluid rounded" src="http://placehold.it/300x300" alt>
-        </div>
+        </div>-->
       </div>
     </div>
     <!-- /.container -->
@@ -35,7 +35,7 @@ export default {};
 
 <style scoped>
 .about {
-  position: fixed;
+  position: relative;
   margin-top: 85px;
 }
 
@@ -96,5 +96,21 @@ export default {};
     1% 22%,
     2% 28%
   );
+}
+@media (max-width: 768px) {
+  .about {
+    overflow: scroll;
+  }
+  .clip {
+    margin-top: 50px;
+    padding-bottom: 150px;
+  }
+  h5 {
+    margin-top: 75px;
+    padding-top: 15px;
+  }
+  .card-text {
+    color: lightgrey;
+  }
 }
 </style>
